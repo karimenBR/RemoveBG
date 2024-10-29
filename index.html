@@ -13,7 +13,15 @@
             Select an Image
             <input type="file" id="imageInput" accept="image/*">
         </label>
+        <div class="drop-area" id="drop-area">
+            <p>Drag & drop your image here, or click to select a file</p>
+            <input type="file" id="imageInput" accept="image/*" hidden>
+        </div>        
+        <div id="progress-bar" class="progress-bar"></div>
         <img id="outputImage" alt="Processed Image" class="output-image" />
+        <div>
+            <label for="button" class="file-label" id="downloadLink">Download Image</label>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

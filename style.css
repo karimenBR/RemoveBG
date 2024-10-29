@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    align-items: center;
 }
 
 /* Centering and Layout */
@@ -12,18 +13,19 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f4f8;
+    background-color: #fef9f9;
 }
 
 /* Container Styling */
 .container {
     text-align: center;
-    background-color: #ffffff;
+    background-color: #f5ebf5;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     width: 100%;
+    
 }
 
 /* Title Styling */
@@ -38,15 +40,27 @@ h1 {
     display: inline-block;
     padding: 10px 20px;
     color: #ffffff;
-    background-color: #007bff;
-    border-radius: 5px;
+    background-color: #9900ff;
+    border-radius: 20px;
     cursor: pointer;
     margin-bottom: 20px;
     font-weight: bold;
 }
 
+.file-labelD {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #9900ff;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-weight: bold;
+    align-self: center;
+}
+ 
 .file-label:hover {
-    background-color: #0056b3;
+    background-color: #5a00b3;
 }
 
 input[type="file"] {
@@ -59,4 +73,25 @@ input[type="file"] {
     border-radius: 8px;
     margin-top: 15px;
     visibility: hidden; /* Initially hidden */
+}
+.drop-area {
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.drop-area.highlight {
+    border-color: #66afe9;
+}
+#progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background-color: #4caf50;
+    width: 0;
+    transition: width 0.5s ease;
 }
