@@ -1,6 +1,6 @@
 const imageInput = document.getElementById("imageInput");
 const outputImage = document.getElementById("outputImage");
-const apiKey = 'yourAPIkey';
+const apiKey = 'YourAPIkeys';
 const dropArea = document.getElementById("drop-area");
 const progressBar = document.getElementById("progress-bar"); 
 const downloadLink = document.getElementById("downloadLink");
@@ -28,6 +28,12 @@ async function handleFiles(files) {
             const url = URL.createObjectURL(resultBlob);
             outputImage.src = url;
             outputImage.style.visibility = 'visible';
+
+            // Set up the download link
+            downloadLink.href = url; // Set the href to the blob URL
+            downloadLink.download = 'processed-image.png'; // Set the default filename
+            downloadLink.style.display = 'block'; // Show the download link
+
         } catch (error) {
             console.error("Background removal failed:", error);
         } finally {
@@ -57,27 +63,4 @@ async function removeBackgroundWithAPI(imageFile) {
 function showProgress(isLoading) {
     progressBar.style.visibility = isLoading ? 'visible' : 'hidden';
     progressBar.style.width = isLoading ? '100%' : '0';
-}
-
-async function handleFiles(files) {
-    const file = files[0];
-    if (file) {
-        showProgress(true);
-        try {
-            const resultBlob = await removeBackgroundWithAPI(file);
-            const url = URL.createObjectURL(resultBlob);
-            outputImage.src = url;
-            outputImage.style.visibility = 'visible';
-
-            // Set up the download link
-            downloadLink.href = url; // Set the href to the blob URL
-            downloadLink.download = 'removedBG-image.png'; // Set the default filename
-            downloadLink.style.display = 'block'; // Show the download link
-
-        } catch (error) {
-            console.error("Background removal failed:", error);
-        } finally {
-            showProgress(false);
-        }
-    }
 }

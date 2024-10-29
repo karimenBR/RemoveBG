@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Background Removal with Remove.bg API</title>
+    <title>Background Remover</title>
+    <link rel="icon" type="image/png" href="layer_layers_icon_193964.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,7 +21,7 @@
         <div id="progress-bar" class="progress-bar"></div>
         <img id="outputImage" alt="Processed Image" class="output-image" />
         <div>
-            <label for="button" class="file-label" id="downloadLink">Download Image</label>
+            <a id="downloadLink" style="display: none;">Download Image</a> <!-- Changed to an <a> tag -->
         </div>
     </div>
     <script src="script.js"></script>
